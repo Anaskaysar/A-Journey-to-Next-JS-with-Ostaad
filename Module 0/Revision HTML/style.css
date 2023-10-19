@@ -1,0 +1,73 @@
+h1{
+    color: brown;
+}
+
+/* 
+body{
+    background-color: aqua;
+    background-image: url(../images/nature-3082832_640.jpg);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: left;
+    background-attachment: fixed;
+    background-size: cover;
+} */
+
+
+/* Border Properties  */
+/* Border Radius  */
+
+.border-rad{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border-radius: 30px 1px 40px 1px; /* Hello*/
+
+}
+
+.btn{
+    background-color: red;
+    border-radius: 6px;
+    color: white;
+    padding: 30px;
+}
+
+.btn:hover{
+    background-color: green;
+}
+
+p{
+    line-height: 150%;
+}
+
+/* filter 
+1.
+2
+3
+4
+5
+6
+7
+8
+9
+10
+*/
+img{
+    width: 500px;
+    height: auto;
+    filter: sepia(20%)
+}
+
+.my-pos{
+    color: red;
+    position: fixed;
+}
+
+/* css postion properties */
+
+.test{
+    display: flex;
+    justify-content: flex start;
+}
+
+:root{}
