@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array filter</title>
+</head>
+<body>
+
+    <script>
+        var numArray = [100,200,20,23,112,23,233]
+        // filtering from array with condition 
+        var result = numArray.filter(function(item){
+            return item>50
+        })
+        // document.write(result)
+
+        //array find
+        var result2 = numArray.find(function(item){
+            return item <35
+        })
+        document.write(result2)
+
+        //array find index
+        var result3 = numArray.findIndex(function(item){
+            return item <35
+        })
+        document.write(result3)
+
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>
