@@ -8,8 +8,23 @@
 <body>
 
     <script>
-        var Person = {
-            
+        var myPc = {
+            brand : "HP",
+            price : "120K",
+            isLaptop:true,
+            ram :"8GB",
+            disk:"500GB",
+            isSSD:true,
+            processor:"core i-5"
+        }
+        // document.write(myPc['brand'])
+        // console.log(myPc)
+        // console.log(typeof(myPc))
+
+        document.write("<b>For in Loop</b> <br>")  
+
+        for(item in myPc){
+            document.write(myPc[item] + "<br>")
         }
     </script>
     
