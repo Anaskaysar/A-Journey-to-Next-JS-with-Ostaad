@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+<body>
+
+    <button onclick="ExcGetRequest()">Exeecute Get Request</button> <br> <br>  <br>
+    <button onclick="ExeecutePostRequest()">Exeecute Post Request</button>
+
+
+    <script>
+        function ExcGetRequest(){
+            var getUrl = "https://crud.teamrabbil.com/api/v1/ReadProduct"
+            var Configuration = {method: 'GET'};
+
+            fetch(getUrl, Configuration)
+            .then(response => response.json())
+            .then(result => console.log(result))
+            .catch(err =>console.log(err))
+        }
+
+        function ExeecutePostRequest(){
+            var postUrl = "https://crud.teamrabbil.com/api/v1/CreateProduct";
+            var BodyData = {
+                Img:'123',
+                ProductCode:'111',
+                Qty: '123',
+                TotalPrice: '123',
+                UnitPrice:"123" 
+            }
+            var Configuration = {
+                method: 'POST',
+                headers:{
+                    'Accept': 'application/json',
+                    'Content-Type':'application/json'},
+                body:JSON.stringify(BodyData)
+            };
+
+            fetch(postUrl,Configuration)
+            .then(response => response.json())
+            .then(result => console.log(result))
+            .catch(err=>console.log(err))
+        }
+    </script>
+</body>
+</html>
+
+
+
