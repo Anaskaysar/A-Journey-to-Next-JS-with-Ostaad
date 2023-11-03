@@ -1,0 +1,3 @@
+- Next NP Progress Bar
+- searchParams to catch parameters fromm link and query
+- 
