@@ -9,5 +9,5 @@
 #### Module 1
 
 <p align="justify"> 
-
+-> It's a module where we are learning initial steps of Next Js including Project Setup.
 </p> 
