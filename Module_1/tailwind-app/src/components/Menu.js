@@ -7,11 +7,11 @@ const Menu = () => {
     return (
         <div>
             <h1> {currentPath}</h1>
-            <Link className={currentPath === '/'?'active-link':'pending-link'} href={'/'}> Home </Link> <br />
+            <Link className={currentPath === '/'?'active-link':'pending-link'} href={'/'} > Home </Link> <br />
             <Link className={currentPath === '/products'?'active-link':'pending-link'} 
-            href={{pathname:'/products', query:{name:'boook',price:'200 taka'}}}> 
+            href={{pathname:'/products', query:{name:'boook',price:'200 taka'}}} > 
             Products </Link> <br />
-            <Link className={currentPath === '/about'?'active-link':'pending-link'} href={'/about'}> About </Link> 
+            <Link className={currentPath === '/about'?'active-link':'pending-link'} href={'/about'} > About </Link> 
         </div>
     );
 };

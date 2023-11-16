@@ -1,5 +1,5 @@
 'use client';
-import './flobal.css'
+import './global.css'
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 
 export default function RootLayout({ children }) {
