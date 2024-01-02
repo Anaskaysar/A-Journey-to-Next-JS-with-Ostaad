@@ -1,0 +1,12 @@
+- Header Set (Specific path, Entire the app)
+- Important For Security - Policy Set
+- Permision Policy
+- Image Optimization Using Image Component
+    -> Security
+    -> Webp Type
+    -> Auto Responsive Layout
+    -> Layout Fixed
+    -> Priority Loading
+    -> Image Lazy Loading
+    -> Image Place Holder Blur
+-> Font Optimization

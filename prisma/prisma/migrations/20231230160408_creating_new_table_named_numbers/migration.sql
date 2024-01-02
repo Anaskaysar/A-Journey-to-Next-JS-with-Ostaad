@@ -1,0 +1,17 @@
+-- CreateTable
+CREATE TABLE `numbers` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `col1` INTEGER UNSIGNED NOT NULL,
+    `col2` BIGINT NOT NULL,
+    `col3` BIGINT UNSIGNED NOT NULL,
+    `col4` SMALLINT NOT NULL,
+    `col5` MEDIUMINT UNSIGNED NOT NULL,
+    `DeciNum` DECIMAL(65, 30) NOT NULL,
+    `FlotNum` DOUBLE NOT NULL,
+    `onLyFlot` FLOAT NOT NULL,
+    `col6` BIGINT NOT NULL DEFAULT 100,
+    `col7` BIGINT NOT NULL,
+
+    UNIQUE INDEX `numbers_col7_key`(`col7`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

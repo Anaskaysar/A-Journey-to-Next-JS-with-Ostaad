@@ -11,3 +11,10 @@
 <p align="justify"> 
 -> It's a module where we are learning initial steps of Next Js including Project Setup.
 </p> 
+
+#### Module 2
+-> Mostly project structure, Routing, SSR, CSR.
+
+#### Module 3
+-> Next JS Config.js
+

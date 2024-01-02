@@ -1,0 +1,98 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// model means table represent
+// with model we can generate a table in the database and we can implement database operation
+
+enum UserType {
+  New 
+  Existing
+  VIP
+  Regular
+  Bad
+}
+
+
+model user{
+  id Int @id @default(autoincrement())  //primary key declration with id and auto increment
+  email String @unique
+  name String 
+  phone String 
+  city String
+  postcode String 
+  
+}
+
+model useWithEnum{
+  id Int @id @default(autoincrement())
+  remarks UserType
+}
+
+
+model numbers{
+  id Int @id @default(autoincrement())  //primary key declration with id and auto increment
+  col1 Int@db.UnsignedInt
+
+  col2 BigInt
+  col3 BigInt @db.UnsignedBigInt
+  col4 Int @db.SmallInt
+  col5 Int @db.UnsignedMediumInt
+  DeciNum Decimal
+  FlotNum Float  //double equivalent column
+  onLyFlot Float @db.Float
+  col6 BigInt @default(100)
+  col7 BigInt @unique
+
+
+}
+
+model StringText{
+  id Int @id @default(autoincrement()) //primary key, Integer lenght 11 and Auto increment Equivalent column
+
+  col1 String //Varchar length 191 Equivalent Column 
+  col2 String? //Nullable varchar length 191 Equivalent
+  col3 String @default("Bangladesh") // Default vlaue Bangaldesh Varchar Lenght 191 Equivalent Column
+  col4 String @db.VarChar(1000) //Varchar length 1000 Equivalent Column
+  col5 String @db.TinyText // TinyText Equivalent Column
+  col6 String @db.Text //Text Equivalent Column
+  col7 String @db.LongText // Long Text Quivalent Column 
+  col8 String @db.MediumText // Medium Text Equivalent Column
+}
+
+model dateTime{
+  id Int @id @default(autoincrement())
+
+  col1 DateTime //Date Time = Length 3
+  col2 DateTime @db.Date //Date
+  col3 DateTime @db.Time //Time
+  col4 DateTime @db.Timestamp //Timestamp
+  col5 DateTime @db.DateTime //Native
+}
+
+model boolean{
+  id Int @id 
+  
+  col1 Boolean
+  col2 String @db.Char(100) @unique//char attribute must be declared with character number
+}
+
+//Blob - Binary Large Object
+
+model blob{
+  id Int @id
+
+  col1 Bytes @db.Blob
+  col2 Bytes @db.LongBlob
+  col3 Bytes @db.TinyBlob
+}
+
+// Content delivery Metwork link CDN - For File Storing
