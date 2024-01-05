@@ -21,8 +21,61 @@ enum UserType {
   Bad
 }
 
+//Relation Stablishment
+
+//One to One Relationship With user and profile.
 
 model user{
+  id Int @id @default(autoincrement())
+
+  email String
+  password String
+  profile profile? //For one to one
+  post post[] //one to many
+  comment comment[]
+}
+
+model profile{
+  id Int @id @default(autoincrement())
+
+  fnamae String
+  lname String
+  city String
+  postCode String
+  userID Int  @unique//Foreign Key - Only For One to One
+  user user @relation(fields: [userID],references: [id],onDelete: Restrict, onUpdate: Cascade)
+}
+
+// One to Many Relationship
+
+model post{
+id Int @id @default(autoincrement())
+title String
+description String
+userID Int  //As it is not one to one relation ship we can not make it unique. Ex - One user can do multiple posts.
+use user @relation(fields: [userID],references: [id], onDelete: Restrict, onUpdate: Cascade)
+comment comment[]
+}
+
+model comment{
+  id Int @id @default(autoincrement())
+  comment String
+  userID Int //Foreign Key
+  use user @relation(fields: [userID],references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  postID Int //Foreign Key
+  post post @relation(fields: [postID],references: [id],onDelete: Restrict, onUpdate: Cascade)
+}
+
+// https://www.oracle.com/ca-en/database/sqldeveloper/
+
+
+model useWithEnum{
+  id Int @id @default(autoincrement())
+  remarks UserType
+}
+
+model users{
   id Int @id @default(autoincrement())  //primary key declration with id and auto increment
   email String @unique
   name String 
@@ -31,12 +84,6 @@ model user{
   postcode String 
   
 }
-
-model useWithEnum{
-  id Int @id @default(autoincrement())
-  remarks UserType
-}
-
 
 model numbers{
   id Int @id @default(autoincrement())  //primary key declration with id and auto increment
@@ -53,9 +100,12 @@ model numbers{
   col7 BigInt @unique
 
 
+  //one to one relation set up between numbers and sringText
+  stringText stringText?
+
 }
 
-model StringText{
+model stringText{
   id Int @id @default(autoincrement()) //primary key, Integer lenght 11 and Auto increment Equivalent column
 
   col1 String //Varchar length 191 Equivalent Column 
@@ -66,6 +116,9 @@ model StringText{
   col6 String @db.Text //Text Equivalent Column
   col7 String @db.LongText // Long Text Quivalent Column 
   col8 String @db.MediumText // Medium Text Equivalent Column
+
+  numbersID Int @unique
+  numbers numbers @relation(fields: [numbersID], references: [id], onDelete: Restrict, onUpdate: Cascade )
 }
 
 model dateTime{
@@ -96,3 +149,4 @@ model blob{
 }
 
 // Content delivery Metwork link CDN - For File Storing
+
